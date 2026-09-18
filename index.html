@@ -243,6 +243,17 @@
   .theme-am .room-nav a:hover{background:var(--apt-soft);border-color:var(--apt-accent)}
   .theme-am .room-nav a::after,.theme-am .room-more .n{color:var(--apt-accent-2)}
   .theme-am .room-more:hover{border-color:var(--apt-accent);background:var(--apt-soft)}
+  /* Pied de page : gris trop clairs sur blanc (3,2:1 et 2,8:1) remontés au-dessus de 4,5:1. */
+  footer .h-flink-muted{color:rgba(var(--ink-rgb),.72)}
+  footer [style*="letter-spacing:.22em"]{color:rgba(var(--ink-rgb),.72)!important}
+  footer [style*="font-size:12.5px"]{color:rgba(var(--ink-rgb),.7)!important}
+  /* Accessibilité (18/09) : contrastes relevés et puces du carrousel cliquables sur 24 px. */
+  .room-nav-label{color:rgba(var(--ink-rgb),.72)}
+  .theme-am{--apt-accent-text:#7A5C18}
+  html[data-mode="night"] .theme-am{--apt-accent-text:#E9CE8E}
+  .theme-am .room-nav a::after,.theme-am .room-more .n{color:var(--apt-accent-text)}
+  .hero-dot{box-sizing:content-box;padding:8px;background-clip:content-box}
+  .hero-dot:focus-visible{outline:2px solid #fff;outline-offset:2px}
   .wordmark{display:inline-flex;align-items:center;gap:11px;text-decoration:none;line-height:1}
   .wm-text{display:inline-flex;align-items:baseline;gap:9px}
   .wm-logo{height:clamp(34px,4.2vw,46px);width:auto;display:block;flex:none}
@@ -316,7 +327,7 @@
 
 <!-- ===== HEADER ===== -->
 <header id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px clamp(20px,5vw,64px);transition:background .4s ease,box-shadow .4s ease,padding .4s ease,color .4s ease;color:#fff">
-  <a id="brand-home" href="#" class="wordmark" aria-label="AM Résidence — accueil" style="color:inherit"><img class="wm-logo" src="images/logo-am-mark-96.webp" alt="" width="89" height="96" decoding="async"><span class="wm-text"><span class="wm-mono">AM</span><span class="wm-name">Résidence</span><span id="wm-sub" class="wm-sub">Hell-Ville · Nosy Be</span></span></a>
+  <a id="brand-home" href="#" class="wordmark" style="color:inherit"><img class="wm-logo" src="images/logo-am-mark-96.webp" alt="" width="89" height="96" decoding="async"><span class="wm-text"><span class="wm-mono">AM</span><span class="wm-name"> Résidence</span><span id="wm-sub" class="wm-sub"> Hell-Ville · Nosy Be</span></span></a>
   <div style="display:flex;align-items:center;gap:clamp(10px,2vw,18px)">
     <div id="lang-switch" style="display:flex;align-items:center;gap:3px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em">
       <button type="button" class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
@@ -342,8 +353,8 @@
     </div>
     <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(9,20,38,.25) 0%,rgba(9,20,38,0) 30%,rgba(9,20,38,.25) 58%,rgba(9,20,38,.72) 100%)"></div>
   </div>
-  <div class="hero-dots" id="hero-dots" role="tablist" aria-label="Photos de l'hôtel">
-    <button class="hero-dot is-active" type="button" aria-label="Photo 1"></button>
+  <div class="hero-dots" id="hero-dots" role="group" aria-label="Photos de l'hôtel">
+    <button class="hero-dot is-active" type="button" aria-label="Photo 1" aria-current="true"></button>
     <button class="hero-dot" type="button" aria-label="Photo 2"></button>
     <button class="hero-dot" type="button" aria-label="Photo 3"></button>
     <button class="hero-dot" type="button" aria-label="Photo 4"></button>
@@ -958,6 +969,10 @@
     // i18n — traduction FR / IT / EN
     (function () {
       var T = {
+        "Photo": {
+                "it": "Foto",
+                "en": "Photo"
+        },
         "L'hôtel": {
                 "it": "L'hotel",
                 "en": "The hotel"
@@ -1557,6 +1572,10 @@
         "Réserver": {
                 "it": "Prenota",
                 "en": "Book"
+        },
+        "Photos de l'hôtel": {
+                "it": "Foto dell'hotel",
+                "en": "Photos of the hotel"
         },
         "Hôtel · 15 chambres · Nosy Be": {
                 "it": "Hotel · 15 camere · Nosy Be",
