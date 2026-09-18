@@ -2,6 +2,8 @@
 CLAUDE.md
 .build_am.py
 .make_logo.py
+.make_fonts.py
+.make_sizes.py
 .tf-selection.json
 CNAME
 .claude/
