@@ -1,5 +1,7 @@
 .DS_Store
 CLAUDE.md
 .build_am.py
+.make_logo.py
 .tf-selection.json
 CNAME
+.claude/

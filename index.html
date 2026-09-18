@@ -14,7 +14,8 @@
 <meta name="geo.placename" content="Hell-Ville, Nosy Be">
 <meta name="geo.position" content="-13.3874274;48.2505708">
 <meta name="ICBM" content="-13.3874274, 48.2505708">
-<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="180x180" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AM Résidence · Nosy Be">
@@ -236,7 +237,14 @@
   .theme-am .room-nav a:hover{background:var(--apt-soft);border-color:var(--apt-accent)}
   .theme-am .room-nav a::after,.theme-am .room-more .n{color:var(--apt-accent-2)}
   .theme-am .room-more:hover{border-color:var(--apt-accent);background:var(--apt-soft)}
-  .wordmark{display:inline-flex;align-items:baseline;gap:9px;text-decoration:none;line-height:1}
+  .wordmark{display:inline-flex;align-items:center;gap:11px;text-decoration:none;line-height:1}
+  .wm-text{display:inline-flex;align-items:baseline;gap:9px}
+  .wm-logo{height:clamp(34px,4.2vw,46px);width:auto;display:block;flex:none}
+  /* Verrou complet (pied de page) : version claire la nuit, version bleu nuit le jour. */
+  .am-logo{height:96px;width:auto;display:block;margin-bottom:12px}
+  .am-logo-night{display:none}
+  html[data-mode="night"] .am-logo-day{display:none}
+  html[data-mode="night"] .am-logo-night{display:block}
   .wm-mono{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,2.6vw,30px);letter-spacing:.04em;color:#C9A45C}
   .wm-name{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(20px,2.2vw,25px);letter-spacing:.01em}
   .wm-sub{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:.8;margin-left:6px}
@@ -302,7 +310,7 @@
 
 <!-- ===== HEADER ===== -->
 <header id="site-header" style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px clamp(20px,5vw,64px);transition:background .4s ease,box-shadow .4s ease,padding .4s ease,color .4s ease;color:#fff">
-  <a id="brand-home" href="#" class="wordmark" aria-label="AM Résidence — accueil" style="color:inherit"><span class="wm-mono">AM</span><span class="wm-name">Résidence</span><span id="wm-sub" class="wm-sub">Hell-Ville · Nosy Be</span></a>
+  <a id="brand-home" href="#" class="wordmark" aria-label="AM Résidence — accueil" style="color:inherit"><img class="wm-logo" src="images/logo-am-mark.webp" alt="" width="297" height="320" decoding="async"><span class="wm-text"><span class="wm-mono">AM</span><span class="wm-name">Résidence</span><span id="wm-sub" class="wm-sub">Hell-Ville · Nosy Be</span></span></a>
   <div style="display:flex;align-items:center;gap:clamp(10px,2vw,18px)">
     <div id="lang-switch" style="display:flex;align-items:center;gap:3px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.1em">
       <button type="button" class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
@@ -848,7 +856,7 @@
     <footer style="margin-top:clamp(40px,5vw,64px)">
       <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:28px;border-bottom:1px solid rgba(var(--ink-rgb),.1)">
         <div>
-          <div class="wordmark" style="color:#22385C;margin-bottom:12px"><span class="wm-mono">AM</span><span class="wm-name">Résidence</span></div>
+          <img class="am-logo am-logo-day" src="images/logo-am-residence-sombre.webp" alt="AM Résidence" width="319" height="520" loading="lazy" decoding="async"><img class="am-logo am-logo-night" src="images/logo-am-residence.webp" alt="AM Résidence" width="319" height="520" loading="lazy" decoding="async">
           <div style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(var(--ink-rgb),.5)">Djabala · Hell-Ville · Nosy Be</div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:22px;font-size:14px">
